@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d34">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Administração · Tabela de preços</title>
+  <script type="module" src="/admin.js"></script>
+</head>
+<body>
+  <header><div class="wrap bar"><strong>Administração</strong><a href="/">Ver catálogo</a></div></header>
+  <main class="wrap">
+    <h1>Importar tabela de preços</h1>
+    <p id="notice" role="status">Verificando sessão…</p>
+    <form id="login" class="panel" hidden>
+      <label for="password">Senha de administrador</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="512">
+      <button>Entrar</button>
+    </form>
+    <section id="editor" class="panel" hidden>
+      <form id="upload">
+        <label for="file">Planilha Excel (.xlsx)</label>
+        <input id="file" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required>
+        <p class="muted">Use a primeira aba com os cabeçalhos Categoria, Item e Preço na primeira linha. Limite de 10 MB.</p>
+        <button>Validar planilha</button>
+      </form>
+      <section id="preview" hidden>
+        <h2>Prévia da importação</h2>
+        <p id="preview-count"></p>
+        <ul id="preview-items"></ul>
+        <p>Ao publicar, esta planilha substituirá todo o catálogo atual.</p>
+        <button id="publish" type="button">Publicar catálogo</button>
+      </section>
+      <button id="logout" type="button" class="secondary">Sair</button>
+    </section>
+  </main>
+</body>
+</html>

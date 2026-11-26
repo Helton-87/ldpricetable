@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d34">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="icon" href="/icon-192.png">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Tabela de preços</title>
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header><div class="wrap bar"><strong>Tabela de preços</strong><a href="/admin">Administração</a></div></header>
+  <main class="wrap">
+    <section id="install" class="panel install" aria-labelledby="install-title" hidden>
+      <h2 id="install-title">Instale a tabela de preços</h2>
+      <p id="install-help"></p>
+      <div class="actions">
+        <button id="install-button" type="button">Instalar</button>
+        <button class="secondary" id="dismiss-install" type="button">Agora não</button>
+      </div>
+    </section>
+    <div class="title">
+      <h1>Catálogo de preços</h1>
+      <button id="show-install" class="secondary" type="button" hidden>Instalar app</button>
+    </div>
+    <label for="search">Buscar item ou categoria</label>
+    <input id="search" type="search" placeholder="Digite para buscar">
+    <p class="muted" id="status" role="status">Carregando catálogo…</p>
+    <div id="categories"></div>
+  </main>
+</body>
+</html>

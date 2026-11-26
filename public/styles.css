@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light;
+  font: 100%/1.5 system-ui, sans-serif;
+  color: #132c26;
+  background: #f4f7f5;
+  --green: #123d34;
+  --surface: #fff;
+  --border: #cddbd4;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+.wrap { width: min(100% - 2rem, 54rem); margin-inline: auto; }
+header { background: var(--green); color: white; }
+.bar, .actions, .title {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.bar, .title { justify-content: space-between; }
+.bar { min-height: 4rem; padding-block: .5rem; }
+.bar a { color: inherit; padding-block: .6rem; }
+main { padding-block: 1.25rem 3rem; }
+h1, h2 { line-height: 1.15; }
+h1 { font-size: clamp(1.65rem, 5vw, 2.5rem); margin: 0 0 1rem; }
+h2 { font-size: 1.2rem; margin: 0 0 .75rem; }
+.title { margin-bottom: 1rem; }
+.title h1 { margin: 0; }
+label { display: block; font-weight: 650; margin-bottom: .4rem; }
+button, input { font: inherit; min-height: 2.75rem; }
+input {
+  display: block;
+  width: 100%;
+  border: 1px solid #83978e;
+  border-radius: .55rem;
+  padding: .65rem .75rem;
+  background: white;
+  color: inherit;
+}
+button {
+  border: 1px solid var(--green);
+  border-radius: .55rem;
+  padding: .55rem .9rem;
+  background: var(--green);
+  color: white;
+  font-weight: 650;
+  cursor: pointer;
+}
+button:disabled { opacity: .55; cursor: wait; }
+.secondary { background: var(--surface); color: var(--green); }
+:focus-visible { outline: 3px solid #258f77; outline-offset: 3px; }
+.panel, details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: .75rem;
+}
+.panel { padding: 1rem; margin-bottom: 1.25rem; }
+.install { background: #e6f3eb; }
+.install p { margin-top: 0; }
+.muted { color: #4b635a; }
+details { margin-bottom: .65rem; }
+summary { cursor: pointer; padding: .85rem 1rem; font-weight: 700; overflow-wrap: anywhere; }
+summary span { float: right; color: #4b635a; font-weight: 500; margin-left: .75rem; }
+#categories ul { list-style: none; margin: 0; padding: 0; }
+#categories li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .75rem;
+  border-top: 1px solid var(--border);
+  padding: .75rem 1rem;
+  overflow-wrap: anywhere;
+}
+#categories li strong { white-space: nowrap; }
+#login button, #logout { margin-top: 1rem; }
+#preview { border-top: 1px solid var(--border); margin-top: 1.25rem; padding-top: 1.25rem; }
