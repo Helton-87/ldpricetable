@@ -47,5 +47,23 @@
     <p class="muted" id="status" role="status">Carregando catálogo…</p>
     <div id="categories"></div>
   </main>
+  <footer class="wrap share-footer" id="share-footer" hidden>
+    <details class="share-panel">
+      <summary>Compartilhar tabela de preços</summary>
+      <div class="share-controls">
+        <fieldset>
+          <legend>Escolha as categorias</legend>
+          <button type="button" class="secondary" id="share-all">Todas as categorias</button>
+          <div id="share-categories"></div>
+        </fieldset>
+        <div class="actions">
+          <button type="button" id="share-generate" disabled>Gerar imagem</button>
+          <button type="button" id="share-whatsapp" hidden>Enviar para o WhatsApp</button>
+        </div>
+        <p id="share-status" role="status"></p>
+        <div id="share-downloads"></div>
+      </div>
+    </details>
+  </footer>
 </body>
 </html>
