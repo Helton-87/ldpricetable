@@ -1,4 +1,4 @@
-const cacheName = 'ld-price-pages-v4'
+const cacheName = 'ld-price-pages-v5'
 const shell = [new URL('./', self.registration.scope).pathname, new URL('./app.js', self.registration.scope).pathname, new URL('./catalog.js', self.registration.scope).pathname, new URL('./styles.css', self.registration.scope).pathname, new URL('./manifest.webmanifest', self.registration.scope).pathname, new URL('./logo.png', self.registration.scope).pathname, new URL('./icon-192.png', self.registration.scope).pathname, new URL('./icon-512.png', self.registration.scope).pathname]
 const catalogPath = new URL('./catalog.json', self.registration.scope).pathname
 
