@@ -38,7 +38,7 @@ export default {
         const asset = Object.hasOwn(assets, path) ? assets[path] : undefined
         if (asset) {
           const [type, encoded] = asset
-          return new Response(Uint8Array.fromBase64(encoded), {
+          return new Response(Uint8Array.from(atob(encoded), char => char.charCodeAt(0)), {
             headers: { ...privateHeaders, 'Content-Type': type }
           })
         }
