@@ -16,6 +16,7 @@ const source = {
   '/styles.css': ['text/css; charset=utf-8', 'public/styles.css'],
   '/manifest.webmanifest': ['application/manifest+json', 'public/manifest.webmanifest'],
   '/sw.js': [js, 'sites/sw.js'],
+  '/logo.png': [png, 'public/logo.png'],
   '/icon-192.png': [png, 'public/icon-192.png'],
   '/icon-512.png': [png, 'public/icon-512.png']
 }

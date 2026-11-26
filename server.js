@@ -53,6 +53,7 @@ const publicFiles = {
   '/styles.css': ['styles.css', 'text/css'],
   '/sw.js': ['sw.js', 'text/javascript'],
   '/manifest.webmanifest': ['manifest.webmanifest', 'application/manifest+json'],
+  '/logo.png': ['logo.png', 'image/png'],
   '/icon-192.png': ['icon-192.png', 'image/png'],
   '/icon-512.png': ['icon-512.png', 'image/png']
 }

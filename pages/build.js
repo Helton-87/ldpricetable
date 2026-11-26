@@ -1,7 +1,7 @@
 import { access, copyFile, mkdir, readFile, writeFile } from 'node:fs/promises'
 
 await mkdir('admin', { recursive: true })
-for (const file of ['catalog.js', 'styles.css', 'icon-192.png', 'icon-512.png']) {
+for (const file of ['catalog.js', 'styles.css', 'logo.png', 'icon-192.png', 'icon-512.png']) {
   await copyFile('public/' + file, '' + file)
 }
 // Keep all static assets under the project's GitHub Pages path.

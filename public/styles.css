@@ -31,6 +31,8 @@ header { background: var(--ink); border-bottom: 1px solid #243854; }
 }
 .bar, .title { justify-content: space-between; }
 .bar { min-height: 4rem; padding-block: .5rem; }
+.brand { display: flex; align-items: center; gap: .65rem; }
+.brand img { box-sizing: content-box; display: block; background: white; border-radius: .65rem; padding: .12rem; }
 .bar a { color: inherit; padding-block: .6rem; }
 main { padding-block: 1.25rem 3rem; }
 h1, h2 { line-height: 1.15; }

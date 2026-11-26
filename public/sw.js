@@ -1,5 +1,5 @@
-const cacheName = 'ld-price-v3'
-const shell = ['/', '/app.js', '/catalog.js', '/styles.css', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png']
+const cacheName = 'ld-price-v4'
+const shell = ['/', '/app.js', '/catalog.js', '/styles.css', '/manifest.webmanifest', '/logo.png', '/icon-192.png', '/icon-512.png']
 const catalogPath = '/api/catalog'
 
 self.addEventListener('install', event => event.waitUntil((async () => {
