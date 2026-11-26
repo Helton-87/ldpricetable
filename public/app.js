@@ -1,4 +1,4 @@
-import { normalize, money } from './catalog.js'
+import { normalize, money, itemPrices } from './catalog.js'
 
 const byId = id => document.getElementById(id)
 const install = byId('install')
@@ -100,6 +100,15 @@ function render() {
     for (const item of group.items.sort((a, b) => sort.compare(a.name, b.name))) {
       const row = document.createElement('li')
       row.append(element('span', item.name), element('strong', money.format(item.cents / 100)))
+      const prices = itemPrices(item)
+      if (prices.length) {
+        const options = document.createElement('dl')
+        options.className = 'discounts'
+        for (const { label, cents } of prices) {
+          options.append(element('dt', label), element('dd', money.format(cents / 100)))
+        }
+        row.append(options)
+      }
       list.append(row)
     }
     section.append(title, list)

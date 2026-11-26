@@ -15,13 +15,14 @@ Requisitos: Node.js 24+ e npm.
 
 Salve como `.xlsx` com até 10 MB. Na primeira aba, use estes cabeçalhos na primeira linha:
 
-| Categoria | Item | Preço |
-| --- | --- | --- |
-| Bebidas | Água mineral | 3,50 |
-| Bebidas | Suco de laranja | 8,90 |
-| Lanches | Sanduíche | 14,00 |
+| Categoria | Descrição | Preço | PIX - 2% | 3% (3+ UN.) |
+| --- | --- | --- | --- | --- |
+| Bebidas | Suco | 10,00 | 9,80 | 9,70 |
+| Lanches | Sanduíche | 14,00 | | |
 
-Preços são em reais, com até duas casas decimais. O importador aceita células numéricas, texto no formato brasileiro e fórmulas com resultado numérico salvo pelo Excel. Use até 10.000 itens. Entre como administrador, selecione o arquivo, valide os dados e confira a prévia. **Publicar catálogo** substitui a versão atual. A planilha é lida localmente e apenas categoria, item e preço são enviados e gravados.
+O cabeçalho Item também é aceito no lugar de Descrição. As duas colunas de desconto são opcionais e aparecem no catálogo apenas quando a célula contém um preço. Os valores vêm da planilha.
+
+Preços são em reais, com até duas casas decimais. O importador aceita células numéricas, texto no formato brasileiro e fórmulas com resultado numérico salvo pelo Excel. Use até 10.000 itens. Entre como administrador, selecione o arquivo, valide os dados e confira a prévia. **Publicar catálogo** substitui a versão atual. A planilha é lida localmente e apenas os dados do catálogo são enviados e gravados.
 
 ## Hospedagem
 

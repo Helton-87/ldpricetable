@@ -29,6 +29,22 @@ test('imports an Excel workbook with numeric, localized and calculated prices', 
   assert.throws(() => sheetToItems(parsed), /Linha 5 inválida/)
 })
 
+test('recognizes the Descrição layout and preserves optional discount prices', () => {
+  const workbook = new Excel.Workbook()
+  const sheet = workbook.addWorksheet('Catálogo')
+  sheet.addRows([
+    ['CATEGORIA', 'DESCRIÇÃO', 'PREÇO', 'PIX - 2%', '3% (3+ UN.)'],
+    ['Bebidas', 'Suco', 10, 9.8, '9,70'],
+    ['Lanches', 'Sanduíche', 14, null, ' ']
+  ])
+  assert.deepEqual(sheetToItems(sheet), [
+    { category: 'Bebidas', name: 'Suco', cents: 1000, pixCents: 980, bulkCents: 970 },
+    { category: 'Lanches', name: 'Sanduíche', cents: 1400 }
+  ])
+  sheet.getCell('D2').value = 'inválido'
+  assert.throws(() => sheetToItems(sheet), /Linha 2: confira o preço para PIX/)
+})
+
 test('restricts publication and preserves the last valid catalog after a restart', { timeout: 15000 }, async () => {
   const dir = await mkdtemp(join(tmpdir(), 'ld-catalog-'))
   const password = 'senha exclusiva dos testes'
@@ -63,7 +79,7 @@ test('restricts publication and preserves the last valid catalog after a restart
       headers: { 'Content-Type': 'application/json', 'X-LD-Request': marker, ...(cookie && { Cookie: cookie }) },
       body: JSON.stringify(input)
     })
-    const items = [{ category: 'Bebidas', name: 'Suco', cents: 500 }]
+    const items = [{ category: 'Bebidas', name: 'Suco', cents: 500, pixCents: 490, bulkCents: 485 }]
     assert.equal((await post('catalog', { items })).status, 401)
     assert.equal((await fetch(base + '/exceljs.js')).status, 401)
     const login = await post('login', { password })

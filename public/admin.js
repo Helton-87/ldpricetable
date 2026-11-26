@@ -1,4 +1,4 @@
-import { money, sheetToItems } from './catalog.js'
+import { money, sheetToItems, itemPrices } from './catalog.js'
 
 const byId = id => document.getElementById(id)
 const login = byId('login')
@@ -98,6 +98,9 @@ upload.onsubmit = event => {
     const sample = items.slice(0, 5).map(item => {
       const row = document.createElement('li')
       row.textContent = `${item.category} · ${item.name} · ${money.format(item.cents / 100)}`
+      for (const { label, cents } of itemPrices(item)) {
+        row.textContent += ` · ${label} ${money.format(cents / 100)}`
+      }
       return row
     })
     byId('preview-items').replaceChildren(...sample)

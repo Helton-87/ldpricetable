@@ -74,3 +74,14 @@ summary span { float: right; color: #4b635a; font-weight: 500; margin-left: .75r
 #categories li strong { white-space: nowrap; }
 #login button, #logout { margin-top: 1rem; }
 #preview { border-top: 1px solid var(--border); margin-top: 1.25rem; padding-top: 1.25rem; }
+
+.discounts {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .25rem .75rem;
+  margin: 0;
+  font-size: .875rem;
+  color: #4b635a;
+}
+.discounts dd { margin: 0; white-space: nowrap; }
