@@ -137,15 +137,15 @@ const shareWhatsApp = byId('share-whatsapp')
 const shareStatus = byId('share-status')
 const shareDownloads = byId('share-downloads')
 let exportGroups = []
-let exportFiles = []
-let exportUrls = []
+let exportFile
+let exportUrl
 let exportVersion = 0
 
 function clearExport() {
   exportVersion++
-  for (const url of exportUrls) URL.revokeObjectURL(url)
-  exportUrls = []
-  exportFiles = []
+  if (exportUrl) URL.revokeObjectURL(exportUrl)
+  exportUrl = undefined
+  exportFile = undefined
   shareWhatsApp.hidden = true
   shareWhatsApp.disabled = false
   shareDownloads.replaceChildren()
@@ -210,13 +210,52 @@ function wrapExportText(ctx, text, width) {
   return lines
 }
 
-async function buildExportFiles(groups, isCurrent) {
+function makeCatalogPdf(images, width, height) {
+  // PDF cross-reference offsets count bytes, including the binary JPEG streams.
+  const chunks = ['%PDF-1.4\n']
+  const offsets = [0]
+  let offset = chunks[0].length
+  function append(chunk) {
+    chunks.push(chunk)
+    offset += typeof chunk === 'string' ? chunk.length : chunk.size
+  }
+  function object(id, ...parts) {
+    offsets[id] = offset
+    append(id + ' 0 obj\n')
+    for (const part of parts) append(part)
+    append('\nendobj\n')
+  }
+
+  const pageWidth = 595.28
+  const pageHeight = 841.89
+  const pageIds = images.map((_, index) => (3 + index * 3) + ' 0 R')
+  object(1, '<< /Type /Catalog /Pages 2 0 R >>')
+  object(2, '<< /Type /Pages /Count ' + images.length + ' /Kids [' + pageIds.join(' ') + '] >>')
+  for (const [index, image] of images.entries()) {
+    const page = 3 + index * 3
+    object(page, '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ' + pageWidth + ' ' + pageHeight +
+      '] /Resources << /XObject << /Table ' + (page + 1) + ' 0 R >> >> /Contents ' + (page + 2) + ' 0 R >>')
+    object(page + 1, '<< /Type /XObject /Subtype /Image /Width ' + width + ' /Height ' + height +
+      ' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ' + image.size +
+      ' >>\nstream\n', image, '\nendstream')
+    const draw = 'q\n' + pageWidth + ' 0 0 ' + pageHeight + ' 0 0 cm\n/Table Do\nQ\n'
+    object(page + 2, '<< /Length ' + draw.length + ' >>\nstream\n' + draw + 'endstream')
+  }
+  const xref = offset
+  append('xref\n0 ' + offsets.length + '\n0000000000 65535 f \n')
+  for (const position of offsets.slice(1)) append(String(position).padStart(10, '0') + ' 00000 n \n')
+  append('trailer\n<< /Size ' + offsets.length + ' /Root 1 0 R >>\nstartxref\n' + xref + '\n%%EOF\n')
+  return new File(chunks, 'tabela-de-precos.pdf', { type: 'application/pdf' })
+}
+
+async function buildExportPdf(groups, isCurrent) {
   const logo = new Image()
   logo.src = new URL('./logo.png', import.meta.url).href
   await logo.decode()
   const stamp = exportDate.format(new Date())
   const canvas = document.createElement('canvas')
   canvas.width = 1080
+  canvas.height = 1528
   const ctx = canvas.getContext('2d')
   const pages = [[]]
   let page = pages[0]
@@ -230,7 +269,7 @@ async function buildExportFiles(groups, isCurrent) {
       ctx.font = '25px system-ui'
       const lines = wrapExportText(ctx, item.name, 735)
       const height = Math.max(54, lines.length * 31 + 18)
-      if (used + height + (needsTitle ? categoryRow.height : 0) > 1232) {
+      if (used + height + (needsTitle ? categoryRow.height : 0) > 1200) {
         page = []
         pages.push(page)
         used = 0
@@ -245,11 +284,11 @@ async function buildExportFiles(groups, isCurrent) {
       used += height
     }
   }
-  const files = []
+  const images = []
   for (const [index, rows] of pages.entries()) {
-    if (!isCurrent()) return []
+    if (!isCurrent()) return
     const last = index === pages.length - 1
-    canvas.height = 212 + rows.reduce((sum, row) => sum + row.height, 0) + (last ? 94 : 36)
+    ctx.textAlign = 'left'
     ctx.textBaseline = 'middle'
     ctx.fillStyle = '#f6f9fc'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -289,13 +328,13 @@ async function buildExportFiles(groups, isCurrent) {
       ctx.fillStyle = '#344e6d'
       ctx.font = '23px system-ui'
       ctx.textAlign = 'center'
-      ctx.fillText('Gerado em ' + stamp + ' (horário de Brasília)', 540, y + 49)
+      ctx.fillText('Gerado em ' + stamp + ' (horário de Brasília)', 540, canvas.height - 44)
     }
-    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'))
-    if (!blob) throw new Error('Não foi possível exportar a imagem.')
-    files.push(new File([blob], 'tabela-de-precos-' + (index + 1) + '.png', { type: blob.type }))
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', .92))
+    if (!blob || blob.type !== 'image/jpeg') throw new Error('Não foi possível renderizar a página.')
+    images.push(blob)
   }
-  return files
+  return makeCatalogPdf(images, canvas.width, canvas.height)
 }
 
 shareGenerate.onclick = async () => {
@@ -303,25 +342,22 @@ shareGenerate.onclick = async () => {
   const version = exportVersion
   const selected = new Set(Array.from(shareCategories.querySelectorAll(':checked'), input => input.value))
   shareGenerate.disabled = true
-  shareStatus.textContent = 'Gerando imagens…'
+  shareStatus.textContent = 'Gerando PDF…'
   try {
-    const files = await buildExportFiles(exportGroups.filter(group => selected.has(group.key)), () => version === exportVersion)
+    const file = await buildExportPdf(exportGroups.filter(group => selected.has(group.key)), () => version === exportVersion)
     if (version !== exportVersion) return
-    exportFiles = files
-    for (const [index, file] of files.entries()) {
-      const link = element('a', files.length === 1 ? 'Baixar imagem' : 'Baixar página ' + (index + 1))
-      const url = URL.createObjectURL(file)
-      exportUrls.push(url)
-      link.href = url
-      link.download = file.name
-      shareDownloads.append(link)
-    }
-    shareWhatsApp.hidden = !navigator.share || !navigator.canShare?.({ files })
+    exportFile = file
+    exportUrl = URL.createObjectURL(file)
+    const link = element('a', 'Baixar PDF')
+    link.href = exportUrl
+    link.download = file.name
+    shareDownloads.append(link)
+    shareWhatsApp.hidden = !navigator.share || !navigator.canShare?.({ files: [file] })
     shareStatus.textContent = shareWhatsApp.hidden
-      ? 'Baixe as imagens abaixo e anexe no WhatsApp.'
+      ? 'Baixe o PDF abaixo e anexe no WhatsApp.'
       : 'Toque em Enviar para o WhatsApp e escolha o WhatsApp no menu do celular.'
   } catch {
-    if (version === exportVersion) shareStatus.textContent = 'Não foi possível gerar a imagem. Tente novamente.'
+    if (version === exportVersion) shareStatus.textContent = 'Não foi possível gerar o PDF. Tente novamente.'
   } finally {
     if (version === exportVersion) shareGenerate.disabled = false
   }
@@ -331,10 +367,10 @@ shareWhatsApp.onclick = async () => {
   const version = exportVersion
   shareWhatsApp.disabled = true
   try {
-    await navigator.share({ files: exportFiles })
+    await navigator.share({ files: [exportFile] })
   } catch (error) {
     if (version === exportVersion && error.name !== 'AbortError') {
-      shareStatus.textContent = 'Baixe as imagens abaixo e anexe no WhatsApp.'
+      shareStatus.textContent = 'Baixe o PDF abaixo e anexe no WhatsApp.'
     }
   } finally {
     if (version === exportVersion) shareWhatsApp.disabled = false
