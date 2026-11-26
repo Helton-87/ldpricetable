@@ -173,3 +173,8 @@ main > .muted { color: inherit; }
 #share-whatsapp {
   background-color: #25D366;
 }
+
+.wrap share-footer {
+  margin: auto;
+  height: 0;
+}
