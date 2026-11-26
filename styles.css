@@ -169,3 +169,7 @@ main > .muted { color: inherit; }
 }
 #share-categories input { width: 1.15rem; min-height: 0; height: 1.15rem; flex: none; }
 #share-downloads a { display: block; width: fit-content; padding-block: .4rem; }
+
+#share-whatsapp {
+  background-color: #25D366;
+}
