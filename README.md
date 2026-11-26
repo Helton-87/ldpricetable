@@ -2,7 +2,16 @@
 
 Catálogo mobile-first em português, com busca e itens agrupados por categoria. A administração fica em `/admin`. A consulta do catálogo fica aberta a quem puder acessar o endereço do servidor.
 
-## Executar
+## GitHub Pages
+
+- Consulta: https://helton-87.github.io/ldpricetable/
+- Preparar atualização: https://helton-87.github.io/ldpricetable/admin/
+
+Abra a página de atualização, selecione o Excel e valide. Baixe `catalog.json` e use o botão **Abrir o GitHub** para enviar esse arquivo ao repositório. Confira o nome do arquivo e clique em **Commit changes** com a conta que tem permissão de escrita. O GitHub Pages atualizará a consulta após a publicação. Apenas o catálogo convertido é público. O Excel original fica no seu dispositivo.
+
+O GitHub Pages publica os arquivos da raiz do repositório. Para regenerar a interface, execute `npm ci` e `node pages/build.js`. O gerador preserva `catalog.json`.
+
+## Executar localmente
 
 Requisitos: Node.js 24+ e npm.
 

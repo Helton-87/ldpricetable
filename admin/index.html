@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d34">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Atualizar tabela de preços</title>
+  <script type="module" src="./import.js"></script>
+</head>
+<body>
+  <header><div class="wrap bar"><strong>Atualizar tabela</strong><a href="../">Ver catálogo</a></div></header>
+  <main class="wrap">
+    <h1>Importar tabela de preços</h1>
+    <section class="panel">
+      <form id="upload">
+        <label for="file">Planilha Excel (.xlsx)</label>
+        <input id="file" type="file" accept=".xlsx" required>
+        <p class="muted">Selecione a planilha com Categoria, Descrição e Preço. As colunas de desconto são opcionais.</p>
+        <button>Validar planilha</button>
+      </form>
+      <p id="notice" role="status"></p>
+      <section id="preview" hidden>
+        <h2>Prévia da importação</h2>
+        <ul id="items"></ul>
+        <ol>
+          <li>Baixe o arquivo <strong>catalog.json</strong> abaixo.</li>
+          <li>Abra o GitHub, entre com sua conta e selecione o arquivo que acabou de baixar.</li>
+          <li>Clique em <strong>Commit changes</strong>. A tabela será atualizada em alguns minutos.</li>
+        </ol>
+        <div class="actions">
+          <button id="download" type="button">Baixar catalog.json</button>
+          <a href="https://github.com/Helton-87/ldpricetable/upload/main">Abrir o GitHub</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
