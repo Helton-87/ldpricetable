@@ -42,7 +42,7 @@ function setSession(active) {
 async function run(action) {
   if (busy) return
   busy = true
-  const controls = [login.querySelector('button'), upload.querySelector('button'), file, publish, logout]
+  const controls = [login.querySelector('button'), upload.querySelector('button'), file, publish, logout].filter(Boolean)
   controls.forEach(control => { control.disabled = true })
   notice.textContent = 'Processando…'
   try { notice.textContent = await action() }
