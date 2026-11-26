@@ -17,7 +17,7 @@ for (const key of ['id', 'start_url', 'scope']) manifest[key] = './'
 for (const icon of manifest.icons) icon.src = '.' + icon.src
 await writeFile('manifest.webmanifest', JSON.stringify(manifest, null, 2) + '\n')
 const worker = (await readFile('public/sw.js', 'utf8'))
-  .replace("ld-price-v2", "ld-price-pages-v1")
+  .replace(/ld-price-v(\d+)/, 'ld-price-pages-v$1')
   .replace(/'\/([^']*)'/g, (_, path) => "new URL('./" + (path === 'api/catalog' ? 'catalog.json' : path) + "', self.registration.scope).pathname")
   .replace("name.startsWith('ld-price-')", "name.startsWith('ld-price-pages-')")
 await writeFile('sw.js', worker)

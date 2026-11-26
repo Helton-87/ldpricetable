@@ -1,4 +1,4 @@
-const cacheName = 'ld-price-v2'
+const cacheName = 'ld-price-v3'
 const shell = ['/', '/app.js', '/catalog.js', '/styles.css', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png']
 const catalogPath = '/api/catalog'
 
