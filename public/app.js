@@ -358,7 +358,7 @@ shareGenerate.onclick = async () => {
     shareWhatsApp.hidden = !navigator.share || !navigator.canShare?.({ files: [file] })
     shareStatus.textContent = shareWhatsApp.hidden
       ? 'Baixe o PDF abaixo e anexe como Documento no WhatsApp.'
-      : 'Escolha o WhatsApp no menu do celular para compartilhar o arquivo tabela-de-precos.pdf.'
+      : ''
   } catch {
     if (version === exportVersion) shareStatus.textContent = 'Não foi possível gerar o PDF. Tente novamente.'
   } finally {
