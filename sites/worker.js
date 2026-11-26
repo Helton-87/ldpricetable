@@ -17,8 +17,12 @@ export default {
     const path = new URL(request.url).pathname
     const email = request.headers.get('oai-authenticated-user-email')?.toLowerCase()
     const signedIn = Boolean(request.headers.get('oai-authenticated-user-id'))
-    if (!signedIn) return json({ error: 'Entre com uma conta autorizada.' }, 401)
-    const admin = Boolean(email && email === env.ADMIN_EMAIL?.toLowerCase())
+    const admin = Boolean(signedIn && email && email === env.ADMIN_EMAIL?.toLowerCase())
+    if (path === '/admin' && request.method === 'GET' && !signedIn) {
+      return new Response(null, {
+        status: 303, headers: { ...privateHeaders, Location: '/signin-with-chatgpt?return_to=%2Fadmin' }
+      })
+    }
     if (['/admin', '/admin.js', '/exceljs.js'].includes(path) && !admin) {
       return new Response('A importação é exclusiva do administrador.', { status: 403, headers: privateHeaders })
     }
