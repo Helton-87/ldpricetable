@@ -3,7 +3,7 @@
     {
       "category": "TOXINAS BOTULÍNICAS",
       "name": "TOXINA BOTULÍNICA NABOTA 100U 1FR/AMP",
-      "cents": 1000000,
+      "cents": 60000,
       "pixCents": 58800,
       "bulkCents": 58200
     },
@@ -539,5 +539,5 @@
       "cents": 824
     }
   ],
-  "updatedAt": "2026-11-26T15:28:29.500Z"
+  "updatedAt": "2026-11-26T15:29:45.516Z"
 }
