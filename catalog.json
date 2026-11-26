@@ -1,1 +1,543 @@
-{"items":[],"updatedAt":null}
+{
+  "items": [
+    {
+      "category": "TOXINAS BOTULÍNICAS",
+      "name": "TOXINA BOTULÍNICA NABOTA 100U 1FR/AMP",
+      "cents": 60000,
+      "pixCents": 58800,
+      "bulkCents": 58200
+    },
+    {
+      "category": "TOXINAS BOTULÍNICAS",
+      "name": "TOXINA BOTULÍNICA DYSPORT 300U",
+      "cents": 99900,
+      "pixCents": 97902,
+      "bulkCents": 96903
+    },
+    {
+      "category": "TOXINAS BOTULÍNICAS",
+      "name": "TOXINA BOTULÍNICA DYSPORT 500U",
+      "cents": 138000,
+      "pixCents": 135240,
+      "bulkCents": 133860
+    },
+    {
+      "category": "TOXINAS BOTULÍNICAS",
+      "name": "TOXINA BOTULÍNICA XEOMIN 100 UI",
+      "cents": 62500,
+      "pixCents": 61250,
+      "bulkCents": 60625
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "E.P.T.Q LIDOCAINE S 300",
+      "cents": 22500,
+      "pixCents": 22050,
+      "bulkCents": 21825
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "E.P.T.Q LIDOCAINE S 500",
+      "cents": 23500,
+      "pixCents": 23030,
+      "bulkCents": 22795
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RENNOVA DEEP LINE LIDO 1ML",
+      "cents": 27100,
+      "pixCents": 26558,
+      "bulkCents": 26287
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RENNOVA LIFT SER 1ML",
+      "cents": 24500,
+      "pixCents": 24010,
+      "bulkCents": 23765
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RENNOVA FILL SER 1ML",
+      "cents": 23500,
+      "pixCents": 23030,
+      "bulkCents": 22795
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "BIOMETIK ESTRIANON HYALURONIC IMPLANT 3ML",
+      "cents": 46508,
+      "pixCents": 45578,
+      "bulkCents": 45113
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RESTYLANE LYFT 1ML UDI",
+      "cents": 29900,
+      "pixCents": 29302,
+      "bulkCents": 29003
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RESTYLANE KYSSE LIDOCAÍNA 1ML UDI",
+      "cents": 49725,
+      "pixCents": 48731,
+      "bulkCents": 48233
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RESTYLANE DEFYNE 1ML",
+      "cents": 49545,
+      "pixCents": 48554,
+      "bulkCents": 48059
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RESTYLANE GEL 1ML",
+      "cents": 24000,
+      "pixCents": 23520,
+      "bulkCents": 23280
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RESTYLANE GEL LIDOCAÍNA 1ML",
+      "cents": 37920,
+      "pixCents": 37162,
+      "bulkCents": 36782
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RENNOVA LIFT ULTRA VOLUME LIDO 2ML",
+      "cents": 48000,
+      "pixCents": 47040,
+      "bulkCents": 46560
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "NEURAMIS VOLUME LIDOCAINE",
+      "cents": 20100,
+      "pixCents": 19698,
+      "bulkCents": 19497
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RESTYLANE SKINBOOSTERS VITAL COM LIDOCAÍNA",
+      "cents": 38500,
+      "pixCents": 37730,
+      "bulkCents": 37345
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RENNOVA FILL LIDO CLUB",
+      "cents": 15524,
+      "pixCents": 15214,
+      "bulkCents": 15058
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RENNOVA DERM LIDO CLUB",
+      "cents": 16874,
+      "pixCents": 16537,
+      "bulkCents": 16368
+    },
+    {
+      "category": "PREENCHEDORES",
+      "name": "RENNOVA LIFT VOLUME LIDO CLUB",
+      "cents": 18224,
+      "pixCents": 17860,
+      "bulkCents": 17677
+    },
+    {
+      "category": "BIOESTIMULADORES",
+      "name": "NUTRIEX CIENTIFIC PERMANENT FACIAL IMPLANT I",
+      "cents": 36900,
+      "pixCents": 36162,
+      "bulkCents": 35793
+    },
+    {
+      "category": "BIOESTIMULADORES",
+      "name": "RENNOVA DIAMOND INTENSE C/ AGULHA TSK",
+      "cents": 59800,
+      "pixCents": 58604,
+      "bulkCents": 58006
+    },
+    {
+      "category": "BIOESTIMULADORES",
+      "name": "RENNOVA ELLEVA 150",
+      "cents": 70500,
+      "pixCents": 69090,
+      "bulkCents": 68385
+    },
+    {
+      "category": "FIOS DE PDO",
+      "name": "PRODEEP FIOS VOLUME MONO HYDRA PLUS 21G | 60MM | 170MM PCT C/4",
+      "cents": 33599,
+      "pixCents": 32927,
+      "bulkCents": 32591
+    },
+    {
+      "category": "FIOS DE PDO",
+      "name": "FIO LISO MONO 29G | 38MM | 50MM | I-THREAD PCT C/20",
+      "cents": 37500,
+      "pixCents": 36750,
+      "bulkCents": 36375
+    },
+    {
+      "category": "FIOS DE PDO",
+      "name": "FIO SCULPT 18G | 100MM | 185MM | I-THREAD PCT C/10",
+      "cents": 168900,
+      "pixCents": 165522,
+      "bulkCents": 163833
+    },
+    {
+      "category": "FIOS DE PDO",
+      "name": "FIO FILLER 21G | 38MM | 50MM | I-THREAD PCT C/04",
+      "cents": 46508,
+      "pixCents": 45578,
+      "bulkCents": 45113
+    },
+    {
+      "category": "FIOS DE PDO",
+      "name": "PRODEEP FIOS VOLUME MONO HYDRA PLUS 21G | 38MM | 125MM PCT C/4",
+      "cents": 36900,
+      "pixCents": 36162,
+      "bulkCents": 35793
+    },
+    {
+      "category": "FIOS DE PDO",
+      "name": "PRODEEP FIOS VOLUME - MONO EYE 30G | 38MM | 50MM PCT C/10",
+      "cents": 42500,
+      "pixCents": 41650,
+      "bulkCents": 41225
+    },
+    {
+      "category": "FIOS DE PDO",
+      "name": "FIOS ESPICULADO 19G | 100MM | 160MM | I-THREAD PCT C/4",
+      "cents": 37775,
+      "pixCents": 37020,
+      "bulkCents": 36642
+    },
+    {
+      "category": "MICROCÂNULAS",
+      "name": "CAIXA COM 10 MICROCÂNULAS 18G-70MM - FABINJECT",
+      "cents": 12000,
+      "pixCents": 11760,
+      "bulkCents": 11640
+    },
+    {
+      "category": "MICROCÂNULAS",
+      "name": "CAIXA COM 05 MICROCÂNULAS SUBCISÃO 20G-70MM - FABINJECT",
+      "cents": 12000,
+      "pixCents": 11760,
+      "bulkCents": 11640
+    },
+    {
+      "category": "MICROCÂNULAS",
+      "name": "CAIXA COM 10 MICROCÂNULAS 22G-50MM - FABINJECT",
+      "cents": 12000,
+      "pixCents": 11760,
+      "bulkCents": 11640
+    },
+    {
+      "category": "MICROCÂNULAS",
+      "name": "CAIXA COM 10 MICROCÂNULAS F-2550MM - 25G - BIOMETIK",
+      "cents": 17900,
+      "pixCents": 17542,
+      "bulkCents": 17363
+    },
+    {
+      "category": "SOLUÇÕES E MEDICAMENTOS AUXILIARES",
+      "name": "SORO FISIOLÓGICO 0,9% - 10ML",
+      "cents": 99,
+      "pixCents": 97,
+      "bulkCents": 96
+    },
+    {
+      "category": "SOLUÇÕES E MEDICAMENTOS AUXILIARES",
+      "name": "ÁGUA PARA INJEÇÃO 10ML",
+      "cents": 75,
+      "pixCents": 74,
+      "bulkCents": 73
+    },
+    {
+      "category": "SOLUÇÕES E MEDICAMENTOS AUXILIARES",
+      "name": "BICARBONATO DE SÓDIO 8,4% - 10ML",
+      "cents": 150,
+      "pixCents": 147,
+      "bulkCents": 146
+    },
+    {
+      "category": "SOLUÇÕES E MEDICAMENTOS AUXILIARES",
+      "name": "LIDOCAÍNA XYLESTESIN 2% - 20MG/ML SEM VASOCONSTRITOR",
+      "cents": 1499,
+      "pixCents": 1469,
+      "bulkCents": 1454
+    },
+    {
+      "category": "SOLUÇÕES E MEDICAMENTOS AUXILIARES",
+      "name": "HIALURONIDASE 1500UI MESOESTETIC",
+      "cents": 28710,
+      "pixCents": 28136,
+      "bulkCents": 27849
+    },
+    {
+      "category": "SOLUÇÕES E MEDICAMENTOS AUXILIARES",
+      "name": "LIDOCAÍNA XYLESTESIN 2% - 20MG/ML COM VASOCONSTRITOR",
+      "cents": 1499,
+      "pixCents": 1469,
+      "bulkCents": 1454
+    },
+    {
+      "category": "SOLUÇÕES E MEDICAMENTOS AUXILIARES",
+      "name": "CLOREXIDINA DEGERMANTE 2% 30ML",
+      "cents": 722,
+      "pixCents": 708,
+      "bulkCents": 700
+    },
+    {
+      "category": "SOLUÇÕES E MEDICAMENTOS AUXILIARES",
+      "name": "CLOREXIDINA AQUOSA 0,2% 100ML",
+      "cents": 560,
+      "pixCents": 549,
+      "bulkCents": 543
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "DERMA NEEDLES - CARTUCHO ADN 36 AGULHAS | PACK COM 05 UND",
+      "cents": 14900,
+      "pixCents": 14602,
+      "bulkCents": 14453
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "DERMA NEEDLES - CARTUCHO ADN N7D | NANO 137 - AGULHAS | PACK C/ 5 UND",
+      "cents": 14900,
+      "pixCents": 14602,
+      "bulkCents": 14453
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "CARTUCHO SMART DERMA PEN PRETO HK - 36 AGULHAS - SMART GR",
+      "cents": 25900,
+      "pixCents": 25382,
+      "bulkCents": 25123
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "SMART VITA C - 5X5ML - SMART GR",
+      "cents": 20253,
+      "pixCents": 19848,
+      "bulkCents": 19645
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "SKIN DEEP PDRN NEOHAIR SERUM SDC-NHS NUTRIÇÃO CAPILAR",
+      "cents": 22590,
+      "pixCents": 22138,
+      "bulkCents": 21912
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "SMART LIPS CARE MICRO - HIDRA LABIAL",
+      "cents": 26443,
+      "pixCents": 25914,
+      "bulkCents": 25650
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "SKIN DEEP COENZYME Q10 SDC-COQS SERUM ANTIOXIDANTE",
+      "cents": 9600,
+      "pixCents": 9408,
+      "bulkCents": 9312
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "SKIN DEEP EYE ELASTICITY SDC-EYES SERUM P/ELASTICIDADE OLHOS",
+      "cents": 9600,
+      "pixCents": 9408,
+      "bulkCents": 9312
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "SKIN DEEP AZ-OIL CONTROL SDC-AZOC SERUM P/OLEOSIDADE",
+      "cents": 9600,
+      "pixCents": 9408,
+      "bulkCents": 9312
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "SMART BOOSTER MICRO - 5X5ML - SMART GR",
+      "cents": 25238,
+      "pixCents": 24733,
+      "bulkCents": 24481
+    },
+    {
+      "category": "SKINCARE E BOOSTERS",
+      "name": "SMART BOOSTER NIACINAMIDA SKIN PRO - 5X3 ML - SMART GR",
+      "cents": 19171,
+      "pixCents": 18788,
+      "bulkCents": 18596
+    },
+    {
+      "category": "INSUMOS",
+      "name": "AGULHA 13 x 0,30MM (30GX1/2) C/ 100UN MEDIX",
+      "cents": 1013
+    },
+    {
+      "category": "INSUMOS",
+      "name": "AGULHA DESC. 30X8 C/100 UNID. - MEDIX",
+      "cents": 716
+    },
+    {
+      "category": "INSUMOS",
+      "name": "AGULHA DESC.25X7 C/100 UNID. - MEDIX",
+      "cents": 716
+    },
+    {
+      "category": "INSUMOS",
+      "name": "COLETOR PERFURO-CORTANTE 3L - MEDIX",
+      "cents": 401
+    },
+    {
+      "category": "INSUMOS",
+      "name": "COLETOR PERFURO-CORTANTE 7L - MEDIX",
+      "cents": 702
+    },
+    {
+      "category": "INSUMOS",
+      "name": "EMBALAGEM TUBULAR 150MM X 100M VAPOR/ETO - POLLITEX",
+      "cents": 6966
+    },
+    {
+      "category": "INSUMOS",
+      "name": "EMBALAGEM TUBULAR 200MM X 100M VAPOR/ETO - POLLITEX",
+      "cents": 9288
+    },
+    {
+      "category": "INSUMOS",
+      "name": "EMBALAGEM TUBULAR 250MM X 100M VAPOR/ETO - POLLITEX",
+      "cents": 11610
+    },
+    {
+      "category": "INSUMOS",
+      "name": "EQUIPO MACROGOTAS COMPLETO - MEDIX C/ 25 UND",
+      "cents": 2531
+    },
+    {
+      "category": "INSUMOS",
+      "name": "EQUIPO MICROGOTAS COMPLETO - MEDIX C/ 25 UND",
+      "cents": 3308
+    },
+    {
+      "category": "INSUMOS",
+      "name": "EQUIPO MULTIVIAS 2VIAS - DESCARPACK C/ 40 UND",
+      "cents": 3430
+    },
+    {
+      "category": "INSUMOS",
+      "name": "EXTENSOR MULTIVIAS COM CLAMP - MEDIX C/ 40 UND",
+      "cents": 2808
+    },
+    {
+      "category": "INSUMOS",
+      "name": "FITA CIRURGICA HIPOALERGENICA 2,5 CM X 10M - MAXICOR C/ 12 UND",
+      "cents": 3159
+    },
+    {
+      "category": "INSUMOS",
+      "name": "FITA CIRURGICA HIPOALERGENICA 5,0 CM X 4,5M - MAXICOR C/ 6 UND",
+      "cents": 2390
+    },
+    {
+      "category": "INSUMOS",
+      "name": "LAMINA DE BISTURI DESC ACO CARBONO Nº 11 - MAXICOR - C/ 100 UND",
+      "cents": 2700
+    },
+    {
+      "category": "INSUMOS",
+      "name": "LUVA CIR LATEX C/PO MEDIX TAM 8.5 C/ 50 UND",
+      "cents": 6953
+    },
+    {
+      "category": "INSUMOS",
+      "name": "LUVA PROC. SEM PO TAM M CX C/100 UNID - MEDIX",
+      "cents": 2565
+    },
+    {
+      "category": "INSUMOS",
+      "name": "LUVA PROC. TAM. G CX C/100 UNID - MEDIX",
+      "cents": 2201
+    },
+    {
+      "category": "INSUMOS",
+      "name": "LUVA PROC. TAM. P CX C/100 UNID. - MEDIX",
+      "cents": 2363
+    },
+    {
+      "category": "INSUMOS",
+      "name": "LUVA PROC. TAM. PP CX C/100 UNID - MEDIX",
+      "cents": 2201
+    },
+    {
+      "category": "INSUMOS",
+      "name": "MASCARA TRIPLA C/ELASTICO BRANCA - C/ 50 UND",
+      "cents": 608
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SCALP 21G L.L. UNID - MEDIX - C/ 100",
+      "cents": 2295
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SCALP 25G L.L. UNID - MEDIX - C/100",
+      "cents": 2295
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SERINGA 10ML BICO LUER SLIP S/AG - C/100 UND MEDIX",
+      "cents": 2700
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SERINGA 1ML LUER SLIP C/AG 13x0,45MM",
+      "cents": 5400
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SERINGA 20ML BICO LUER SLIP S/AG - C/ 50 UND MEDIX",
+      "cents": 4320
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SERINGA 5ML BICO LUER LOCK S/AG - C/ 100 UND MEDIX",
+      "cents": 1755
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SERINGA 5ML BICO LUER SLIP S/AG - C/ 100 UND MEDIX",
+      "cents": 1755
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SERINGA 60ML BICO LUER LOCK S/AG - C/ 100 UND MEDIX",
+      "cents": 12420
+    },
+    {
+      "category": "INSUMOS",
+      "name": "SERINGA 60ML BICO LUER SLIP S/AG - C/ 25 UND MEDIX",
+      "cents": 12420
+    },
+    {
+      "category": "INSUMOS",
+      "name": "TORNEIRA 3 VIAS LUER LOCK - MEDIX",
+      "cents": 8775
+    },
+    {
+      "category": "INSUMOS",
+      "name": "TOUCA SANFONADA C/ELASTICO 100UN",
+      "cents": 824
+    }
+  ],
+  "updatedAt": "2026-11-26T15:13:30.512Z"
+}
