@@ -136,6 +136,7 @@ const shareGenerate = byId('share-generate')
 const shareWhatsApp = byId('share-whatsapp')
 const shareStatus = byId('share-status')
 const shareDownloads = byId('share-downloads')
+const shareDocumentHelp = byId('share-document-help')
 let exportGroups = []
 let exportFile
 let exportUrl
@@ -149,6 +150,7 @@ function clearExport() {
   shareWhatsApp.hidden = true
   shareWhatsApp.disabled = false
   shareDownloads.replaceChildren()
+  if (shareDocumentHelp) shareDocumentHelp.hidden = true
   shareStatus.textContent = ''
   shareGenerate.disabled = !shareCategories.querySelector(':checked')
 }
@@ -352,10 +354,11 @@ shareGenerate.onclick = async () => {
     link.href = exportUrl
     link.download = file.name
     shareDownloads.append(link)
+    if (shareDocumentHelp) shareDocumentHelp.hidden = false
     shareWhatsApp.hidden = !navigator.share || !navigator.canShare?.({ files: [file] })
     shareStatus.textContent = shareWhatsApp.hidden
-      ? 'Baixe o PDF abaixo e anexe no WhatsApp.'
-      : 'Toque em Enviar para o WhatsApp e escolha o WhatsApp no menu do celular.'
+      ? 'Baixe o PDF abaixo e anexe como Documento no WhatsApp.'
+      : 'Escolha o WhatsApp no menu do celular para compartilhar o arquivo tabela-de-precos.pdf.'
   } catch {
     if (version === exportVersion) shareStatus.textContent = 'Não foi possível gerar o PDF. Tente novamente.'
   } finally {

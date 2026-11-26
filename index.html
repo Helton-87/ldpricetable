@@ -9,7 +9,7 @@
   <link rel="icon" href="./icon-192.png">
   <link rel="stylesheet" href="./styles.css">
   <title>Tabela de preços</title>
-  <script type="module" src="./app.js"></script>
+  <script type="module" src="./app.js?v=10"></script>
 </head>
 <body>
   <div class="snowfall" aria-hidden="true">
@@ -58,10 +58,11 @@
         </fieldset>
         <div class="actions">
           <button type="button" id="share-generate" disabled>Gerar PDF</button>
-          <button type="button" id="share-whatsapp" hidden>Enviar para o WhatsApp</button>
+          <button type="button" id="share-whatsapp" hidden>Compartilhar PDF pelo WhatsApp</button>
         </div>
         <p id="share-status" role="status"></p>
         <div id="share-downloads"></div>
+        <p class="muted" id="share-document-help" hidden>Se o WhatsApp mostrar uma imagem, toque em Baixar PDF e, no WhatsApp, escolha Anexar → Documento.</p>
       </div>
     </details>
   </footer>
